@@ -1,9 +1,6 @@
 package com.pluszkie.herokutest.books;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,11 +16,13 @@ public class BookController {
     }
 
     @GetMapping("/books")
+    @ResponseBody
     List<Book> getBooks() {
         return bookRepository.findAll();
     }
 
     @PostMapping(value = "/books", consumes = APPLICATION_JSON_VALUE, produces = APPLICATION_JSON_VALUE)
+    @ResponseBody
     Book addBook(@RequestBody Book book) {
         return bookRepository.save(book);
     }
