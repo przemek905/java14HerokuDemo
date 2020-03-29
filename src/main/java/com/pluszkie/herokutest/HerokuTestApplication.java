@@ -14,7 +14,7 @@ public class HerokuTestApplication {
 	@GetMapping("/test")
 	@ResponseBody
 	String home() {
-		return "Dzień Dobry Bardzo";
+		return "Dzień Dobry Bardziej";
 	}
 
 	public static void main(String[] args) {
